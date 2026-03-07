@@ -1,0 +1,65 @@
+{
+  "expo": {
+    "name": "Bond Guardian",
+    "slug": "bond-guardian",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "scheme": "bondguardian",
+    "userInterfaceStyle": "automatic",
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#1a1a2e"
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.bondguardian.app",
+      "infoPlist": {
+        "NSCameraUsageDescription": "Bond Guardian needs camera access to take photos of your memories.",
+        "NSPhotoLibraryUsageDescription": "Bond Guardian needs photo library access to save and share memories."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#1a1a2e"
+      },
+      "package": "com.bondguardian.app",
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.WRITE_EXTERNAL_STORAGE"
+      ]
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static",
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-secure-store",
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Bond Guardian needs access to your photos to save memories.",
+          "cameraPermission": "Bond Guardian needs camera access to capture moments."
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "51c8ab1a-10dd-4793-9b31-91a72ca126a5"
+      }
+    },
+    "owner": "apg253"
+  }
+}
