@@ -1,8 +1,7 @@
 import Constants from 'expo-constants';
 
-const BACKEND_URL = Constants.expoConfig?.extra?.backendUrl || 
-                   process.env.EXPO_PUBLIC_BACKEND_URL || 
-                   'http://localhost:8000';
+// FORZAR URL de producción
+const BACKEND_URL = 'https://bond-guardian-api.onrender.com';
 
 class ApiService {
   private baseUrl: string;
@@ -14,10 +13,6 @@ class ApiService {
 
   setToken(token: string) {
     this.token = token;
-  }
-
-  getToken() {
-    return this.token;
   }
 
   clearToken() {
@@ -50,12 +45,6 @@ class ApiService {
   }
 
   // Auth
-  async loginWithGoogle() {
-    // Abrir navegador para OAuth
-    const authUrl = `${this.baseUrl}/api/auth/google`;
-    return authUrl;
-  }
-
   async createTestUser() {
     return this.fetch('/api/auth/dev/create-test-user', {
       method: 'POST',
